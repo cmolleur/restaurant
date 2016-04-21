@@ -1,17 +1,79 @@
 <h1>Add Order</h1>
 <hr>
 <%= form_for @order do |f| %>
-  <%= f.label :is_completed %>
+  <!-- <%= f.label "Order Completed?" %>
   <%= f.select :is_completed, [['Yes', true], ['No', false]]  %>
-  <br>
-  <%= f.label :user_id %>
+  <br> -->
+
+  <!-- <%= f.label :food_id %>
+  <%= f.select( :food_id, options_for_select( @foods.map{ |food| [food.name, food.id ]}) ) %> -->
+
+<div class="block">
+  <%= f.label "Server" %>
   <%= f.select( :user_id, options_for_select(@users.map {|user| [user.name, user.id ]}) ) %>
-  <br>
+</div>
+<div class="block">
   <%= f.label :party_id %>
   <%= f.select( :party_id, options_for_select(@parties.map {|party| [party.quantity, party.id ]}) ) %>
-  <br>
-  <%= f.label :food_id %>
-  <%= f.select( :food_id, options_for_select( @foods.map{ |food| [food.name, food.id ]}) ) %>
-  <br>
-  <%= f.submit %>
+</div>
+</br>
+
+<div class="rows menu">
+  <h3>Appetizers</h3>
+  <div class="menu-item">
+    <%= check_box_tag(:foods) %> <%= label_tag(:foods) %>
+  </div>
+  <div class="menu-item">
+    <%= check_box_tag(:foods) %>
+    <%= label_tag(:foods) %>
+  </div>
+  <div class="menu-item">
+    <%= check_box_tag(:foods) %>
+    <%= label_tag(:foods) %>
+  </div>
+</div>
+
+<div class="rows menu">
+  <h3>Entrees</h3>
+  <div class="menu-item">
+    <%= check_box_tag(:foods) %> <%= label_tag(:foods) %>
+  </div>
+  <div class="menu-item">
+    <%= check_box_tag(:foods) %>
+    <%= label_tag(:foods) %>
+  </div>
+  <div class="menu-item">
+    <%= check_box_tag(:foods) %>
+    <%= label_tag(:foods) %>
+  </div>
+  </br>
+  <div class="menu-item">
+    <%= check_box_tag(:foods) %> <%= label_tag(:foods) %>
+  </div>
+  <div class="menu-item">
+    <%= check_box_tag(:foods) %>
+    <%= label_tag(:foods) %>
+  </div>
+  <div class="menu-item">
+    <%= check_box_tag(:foods) %>
+    <%= label_tag(:foods) %>
+  </div>
+</div>
+
+<div class="rows menu">
+  <h3>Desserts</h3>
+  <div class="menu-item">
+    <%= check_box_tag(:foods) %> <%= label_tag(:foods) %>
+  </div>
+  <div class="menu-item">
+    <%= check_box_tag(:foods) %>
+    <%= label_tag(:foods) %>
+  </div>
+  <div class="menu-item">
+    <%= check_box_tag(:foods) %>
+    <%= label_tag(:foods) %>
+  </div>
+</div>
+
+<%= f.submit %>
 <% end %>
