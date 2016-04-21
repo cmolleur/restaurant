@@ -1,0 +1,95 @@
+html {
+  background-image: url(pasta.jpg);
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: auto;
+}
+body {
+  margin: 0;
+  height: 100%;
+}
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    /*padding: 8px;*/
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+.closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px !important;
+}
+.sub-nav {
+}
+.sub-nav a {
+  font-size: 24px;
+}
+.sub-nav li {
+  list-style-type: none;
+}
+.nav-x {
+  font-size: 24px;
+  color: #fff;
+  font-weight: 700;
+}
+nav {
+  background-color: #62021f;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /*margin-bottom: 25px;*/
+}
+.center {
+  text-align: center;
+}
+.logo {
+  font-family: 'Josefin Slab', serif;
+  font-weight: 300;
+  text-align: center;
+  color: #fff;
+  font-size: 45px;
+}
+.container {
+}
+.box-selector {
+  background-color: white;
+  border-radius: 15px;
+  border: 3px solid #62021f;
+  display: inline-block;
+  padding: 15px;
+  height: 150px;
+  width: 150px;
+}

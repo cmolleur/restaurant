@@ -3,12 +3,44 @@
 <head>
   <title>RestaurantApp</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%=  stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Josefin+Slab:400,300' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
 
-<%= yield %>
+  <nav>
+    <div class="logo">
+      troppo
+    </div>
+    <div id="myNav" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <div class="overlay-content">
+        <!-- <%= link_to "HOME", root_path %> -->
+        <%= link_to "ORDERS", orders_path %>
+        <ul class="sub-nav">
+          <li>Create New Order</li>
+        </ul>
+        <%= link_to "PARTIES", parties_path %>
+        <ul class="sub-nav">
+          <li>Add Party</li>
+        </ul>
+        <a href="#">LOGOUT</a>
+
+        </ul>
+      </div>
+    </div>
+    <div class="nav-x" onclick="openNav()">
+      <span style="font-size:30px;cursor:pointer">☰</span>
+    </div>
+
+  </nav>
+
+  <div class="container">
+    <%= yield %>
+  </div>
+
 
 </body>
 </html>

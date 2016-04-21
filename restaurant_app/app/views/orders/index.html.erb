@@ -1,0 +1,20 @@
+<div class="rows">
+  <div class="nine columns">
+    <h1>Orders</h1>
+  </div>
+  <div class="three columns">
+    <%= button_to "ADD NEW", new_order_path, :method => :get %>
+  </div>
+</div>
+
+  <% @orders.each do |order| %>
+  <div class="rows">
+    <div class="nine columns">
+      <h3>Order #: <%= order.id %></h3>
+    </div>
+    <div class="two columns">
+      <%= button_to "VIEW", order_path(order.id), :method => :get %>
+    </div>
+  </div>
+
+  <% end %>
