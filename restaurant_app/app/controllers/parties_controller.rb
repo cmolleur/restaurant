@@ -18,6 +18,7 @@ class PartiesController < ApplicationController
 
   def show
     @party = Party.find(params[:id])
+    # @orders = Order.where( party_id: @party.id )
   end
 
   def update

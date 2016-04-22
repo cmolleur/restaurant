@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 foods = Food.create([
-  {name: "Clams Oreganato", description: "Baked clams with garlic, spices, and breadcrumbs", price: 9},
+  {name: "Clams Oreganato", description: "Baked clams with garlic, spices, and breadcrumbs", price: 9, category: 'appetizer'},
   {name: "Deep fried ravioli", description: "Smothered in our house sauce", price: 8, category: 'appetizer'},
   {name: "Hot Antipasto", description: "Garlic shrimp, mussels, clams oregenato, mozzarella sticks, eggplant rollatine", price: 13, category: 'appetizer'},
   {name: "Chicken Marsala", description: "Comes with homemade pasta of your choice", price: 16, category: 'entree'},

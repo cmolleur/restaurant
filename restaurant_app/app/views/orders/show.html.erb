@@ -1,7 +1,9 @@
 <h1>Order #: <%= @order.id %></h1>
 <hr>
 <div class="rows">
-  <h5>Order Complete: <%= @order.is_completed %></h5>
-  <h5>Food Ordered: <%= @order.food_id %></h5>
-  <h5>Party: <%= @order.party_id %></h5>
+  <!-- <h5>Order Complete: <%= @order.is_completed %></h5> -->
+  <h5>Party#: <%= @order.party_id %></h5>
+  <h3>Food Orders:</h3>
+  <%= @order.food.name %>
+
 </div>

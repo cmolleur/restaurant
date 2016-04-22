@@ -20,13 +20,13 @@
         <!-- <%= link_to "HOME", root_path %> -->
         <%= link_to "ORDERS", orders_path %>
         <ul class="sub-nav">
-          <li>Create New Order</li>
+          <li><%= link_to "Create a new order", new_order_path %></li>
         </ul>
         <%= link_to "PARTIES", parties_path %>
         <ul class="sub-nav">
-          <li>Add Party</li>
+          <li><%= link_to "Add Party", new_party_path %></li>
         </ul>
-        <a href="#">LOGOUT</a>
+        <%= link_to "LOGOUT", deletion_station_path, method: :delete %>
 
         </ul>
       </div>

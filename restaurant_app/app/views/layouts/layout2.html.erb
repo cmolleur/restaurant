@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RestaurantApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%=  stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Josefin+Slab:400,300' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <style media="screen">
+    html {
+      height: 100%;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="wrapper">
+    <div class="overlay-box">
+      <%= yield %>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

@@ -1,17 +1,27 @@
 class OrdersController < ApplicationController
 
   def index
-    @orders = Order.all
+    @orders = Order.where(user_id: current_user.id)
   end
+
+# order_params.merge food_id: params[:appetizer_ids]
 
   def create
     new_order = Order.create order_params
-    redirect_to order_path(new_order)
+    if params[:appetizer_ids] then Order.create order_params.merge food_id: params[:appetizer_ids][0] end
+    if params[:entree_ids] then Order.create order_params.merge food_id: params[:entree_ids][0] end
+    if params[:dessert_ids] then Order.create order_params.merge food_id: params[:dessert_ids][0] end
+    # redirect_to '/'
+    redirect_to order_path order.id
+    # redirect_to party_path(order_params[:party_id])
   end
 
   def new
     @order   = Order.new
     @foods   = Food.all
+    @entrees = Food.where category: "entree"
+    @desserts = Food.where category: "dessert"
+    @appetizers = Food.where category: "appetizer"
     @users   = User.all
     @parties = Party.all
   end
@@ -24,6 +34,7 @@ class OrdersController < ApplicationController
   end
 
   def show
+    @foods = Order.where params[:food_id]
     @order = Order.find params[:id]
   end
 

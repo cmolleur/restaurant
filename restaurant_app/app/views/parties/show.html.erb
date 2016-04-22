@@ -10,4 +10,8 @@
 </div>
 <div class="rows">
   <h3>Order</h3>
+  <%= @party.orders.each do |food| %>
+    <%= food.name %>
+  </br>
+  <% end %>
 </div>

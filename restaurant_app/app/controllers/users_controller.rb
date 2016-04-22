@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    render :layout => 'layout2'
   end
 
   def create
@@ -10,7 +11,7 @@ class UsersController < ApplicationController
   end
 
   def log_in
-
+    render :layout => 'layout2'
   end
 
   def profile

@@ -4,7 +4,6 @@ html {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
   width: auto;
 }
 body {
@@ -82,16 +81,30 @@ nav {
   color: #fff;
   font-size: 45px;
 }
-.container {
-}
+
 .box-selector {
-  background-color: white;
-  border-radius: 15px;
-  border: 3px solid #62021f;
   display: inline-block;
   padding: 15px;
-  height: 150px;
-  width: 150px;
+  height: 250px;
+  width: 250px;
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 250px;
+  margin: 25px 5px;
+}
+.order {
+  transition: background-color 0.5s ease;
+  background: url(order.jpg) no-repeat;
+  background-size: cover;
+
+}
+
+.party {
+  background: url(party.jpg) no-repeat;
+  background-size: cover;
+
 }
 .block {
   display: inline-block;
@@ -100,12 +113,42 @@ nav {
 .menu {
   margin-bottom: 25px;
 }
-.menu label {
-  display: inline-block;
-}
 .menu-item {
   width: 31%;
   display:inline-block;
+  vertical-align: top;
+
+}
+.menu-name {
+  font-weight: 700;
+  display: inline;
+  margin-bottom: 0;
+}
+.menu-desciption {
+}
+.menu-all {
+  margin-bottom: 15px;
+}
+.black-overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 100%;
+  width:auto;
+  z-index: 1;
+}
+.overlay-box {
+  text-align: center;
+  padding: 25px;
+  background-color: white;
+  z-index: 100;
+  width: 250px;
+  margin: 0 auto;
+
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 @media (max-width: 799px) {

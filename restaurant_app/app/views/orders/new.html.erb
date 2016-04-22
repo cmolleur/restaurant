@@ -1,79 +1,63 @@
-<h1>Add Order</h1>
-<hr>
-<%= form_for @order do |f| %>
-  <!-- <%= f.label "Order Completed?" %>
-  <%= f.select :is_completed, [['Yes', true], ['No', false]]  %>
-  <br> -->
+<div class="rows">
+  <h1>Add Order</h1>
+  <hr>
+  <%= form_for @order do |f| %>
+    <!-- <%= f.label "Order Completed?" %>
+    <%= f.select :is_completed, [['Yes', true], ['No', false]]  %>
+    <br> -->
 
-  <!-- <%= f.label :food_id %>
-  <%= f.select( :food_id, options_for_select( @foods.map{ |food| [food.name, food.id ]}) ) %> -->
+    <!-- <%= f.label :food_id %>
+    <%= f.select( :food_id, options_for_select( @foods.map{ |food| [food.name, food.id ]}) ) %> -->
 
-<div class="block">
-  <%= f.label "Server" %>
-  <%= f.select( :user_id, options_for_select(@users.map {|user| [user.name, user.id ]}) ) %>
+    <div class="block">
+      <%= f.label "Server" %>
+      <%= f.select( :user_id, options_for_select(@users.map {|user| [user.name, user.id ]}) ) %>
+    </div>
+    <div class="block">
+      <%= f.label :party_id %>
+      <%= f.select( :party_id, options_for_select(@parties.map {|party| [party.quantity, party.id ]}) ) %>
+    </div>
+    </br>
+
+    <div class="menu-all">
+      <h3>Appetizers</h3>
+      <% @appetizers.each do |appetizer| %>
+        <div class="menu-item">
+          <%= check_box_tag 'appetizer_ids[]', appetizer.id -%>
+          <p class="menu-name"><%= h appetizer.name -%></p>
+        </br>
+          <%= h appetizer.description -%>
+        </div>
+      <% end %>
+    </div>
+    <hr>
+
+    <div class="menu-all">
+      <h3>Entrees</h3>
+      <% @entrees.each do |entree| %>
+        <div class="menu-item">
+          <%= check_box_tag 'entree_ids[]', entree.id -%>
+          <p class="menu-name"><%= h entree.name -%></p>
+          </br>
+        <%= h entree.description -%>
+        </div>
+      <% end %>
+    </div>
+    <hr>
+
+    <div class="menu-all">
+      <h3>Desserts</h3>
+      <% @desserts.each do |dessert| %>
+        <div class="menu-item">
+          <%= check_box_tag 'dessert_ids[]', dessert.id -%>
+          <p class="menu-name"><%= h dessert.name -%></p>
+          </br>
+        <%= h dessert.description -%>
+        </div>
+      <% end %>
+    </div>
+
+  <%= f.submit %>
+  <% end %>
+
 </div>
-<div class="block">
-  <%= f.label :party_id %>
-  <%= f.select( :party_id, options_for_select(@parties.map {|party| [party.quantity, party.id ]}) ) %>
-</div>
-</br>
-
-<div class="rows menu">
-  <h3>Appetizers</h3>
-  <div class="menu-item">
-    <%= check_box_tag(:foods) %> <%= label_tag(:foods) %>
-  </div>
-  <div class="menu-item">
-    <%= check_box_tag(:foods) %>
-    <%= label_tag(:foods) %>
-  </div>
-  <div class="menu-item">
-    <%= check_box_tag(:foods) %>
-    <%= label_tag(:foods) %>
-  </div>
-</div>
-
-<div class="rows menu">
-  <h3>Entrees</h3>
-  <div class="menu-item">
-    <%= check_box_tag(:foods) %> <%= label_tag(:foods) %>
-  </div>
-  <div class="menu-item">
-    <%= check_box_tag(:foods) %>
-    <%= label_tag(:foods) %>
-  </div>
-  <div class="menu-item">
-    <%= check_box_tag(:foods) %>
-    <%= label_tag(:foods) %>
-  </div>
-  </br>
-  <div class="menu-item">
-    <%= check_box_tag(:foods) %> <%= label_tag(:foods) %>
-  </div>
-  <div class="menu-item">
-    <%= check_box_tag(:foods) %>
-    <%= label_tag(:foods) %>
-  </div>
-  <div class="menu-item">
-    <%= check_box_tag(:foods) %>
-    <%= label_tag(:foods) %>
-  </div>
-</div>
-
-<div class="rows menu">
-  <h3>Desserts</h3>
-  <div class="menu-item">
-    <%= check_box_tag(:foods) %> <%= label_tag(:foods) %>
-  </div>
-  <div class="menu-item">
-    <%= check_box_tag(:foods) %>
-    <%= label_tag(:foods) %>
-  </div>
-  <div class="menu-item">
-    <%= check_box_tag(:foods) %>
-    <%= label_tag(:foods) %>
-  </div>
-</div>
-
-<%= f.submit %>
-<% end %>
