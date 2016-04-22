@@ -1,5 +1,7 @@
 <div class="rows">
-  <h1>Add Order</h1>
+  <div class="center">
+      <h1>Add Order</h1>
+  </div>
   <hr>
   <%= form_for @order do |f| %>
     <!-- <%= f.label "Order Completed?" %>
@@ -56,8 +58,9 @@
         </div>
       <% end %>
     </div>
-
-  <%= f.submit %>
+  <div class="center">
+    <%= f.submit "VIEW" %>
+  </div>
   <% end %>
 
 </div>

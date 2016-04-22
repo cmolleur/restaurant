@@ -71,6 +71,10 @@ nav {
   align-items: center;
   /*margin-bottom: 25px;*/
 }
+.margin-bottom-link {
+  margin-bottom: 2.5rem;
+}
+
 .center {
   text-align: center;
 }
@@ -150,10 +154,33 @@ nav {
   align-items: center;
   height: 100%;
 }
+.center {
+  text-align: center;
+}
+.container {
+  min-height: 700px;
+}
+.divider {
+  border: 1px dotted #d5d5d5;
+}
+.right {
+  text-align: right;
+}
 
 @media (max-width: 799px) {
   .menu-item {
     width: 100%;
     display:block
+  }
+}
+@media (max-width: 521px) {
+  .u-full-width {
+    font-size: 12px;
+  }
+  .u-full-width th {
+    padding: 2px;
+  }
+  .u-full-width td {
+    padding: 2px 0;
   }
 }

@@ -17,15 +17,16 @@
     <div id="myNav" class="overlay">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
       <div class="overlay-content">
-        <!-- <%= link_to "HOME", root_path %> -->
-        <%= link_to "ORDERS", orders_path %>
-        <ul class="sub-nav">
-          <li><%= link_to "Create a new order", new_order_path %></li>
-        </ul>
+        <%= link_to "HOME", profile_path, :class => "margin-bottom-link" %>
         <%= link_to "PARTIES", parties_path %>
         <ul class="sub-nav">
           <li><%= link_to "Add Party", new_party_path %></li>
         </ul>
+        <%= link_to "CREATE ORDER", orders_path, :class => "margin-bottom-link" %>
+        <!-- <ul class="sub-nav">
+          <li><%= link_to "Create a new order", new_order_path %></li>
+        </ul> -->
+
         <%= link_to "LOGOUT", deletion_station_path, method: :delete %>
 
         </ul>

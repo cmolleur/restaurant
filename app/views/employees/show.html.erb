@@ -1,0 +1,7 @@
+<%= link_to "Go Back to Employees", users_path %>
+<hr>
+<h3><%=  @user.name %></h3>
+<h3>Username: <%= @user.username%></h3>
+
+<h5>Password: <%= @user.password%></h5>
+<%= button_to "DELETE", user_path(@user), :method => :delete %>

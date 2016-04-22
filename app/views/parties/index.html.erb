@@ -2,20 +2,28 @@
   <div class="nine columns">
     <h1>Parties</h1>
   </div>
-  <div class="three columns">
+  <div class="three columns right">
     <%= button_to "ADD NEW", new_party_path, :method => :get %>
   </div>
 </div>
 <hr>
 
+<div class="no-paid">
   <% @parties.each do |party| %>
   <div class="rows">
-    <div class="nine columns">
-      <h3>Group #: <%= party.id %></h3>
+    <div class="six columns">
+      <h5>Group #: <%= party.id %></h5>
     </div>
-    <div class="two columns">
-      <%= button_to "VIEW", party_path(party.id), :method => :get %>
+    <div class="three columns">
+      <%= button_to "VIEW", party_path(party.id), :class => "button-primary", :method => :get %>
+    </div>
+    <div class="three columns">
+      <%= button_to "DELETE", party_path(party), method: :destroy %>
     </div>
   </div>
-
+  <hr class="divider">
   <% end %>
+</div>
+<div class="paid">
+
+</div>

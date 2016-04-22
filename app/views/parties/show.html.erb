@@ -9,9 +9,13 @@
   </div>
 </div>
 <div class="rows">
-  <h3>Order</h3>
-  <%= @party.orders.each do |food| %>
-    <%= food.name %>
+  <h5>Food Orders:</h5>
+  <% @party.foods.each do |food| %>
+  <%= food.name %>
+  <%= food.price %>
   </br>
   <% end %>
+</div>
+<div class="rows">
+TOTAL: <%= @total %>
 </div>

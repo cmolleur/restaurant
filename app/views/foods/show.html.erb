@@ -1,0 +1,16 @@
+<%= link_to "Go Back to Menu", foods_path %>
+<hr>
+<h3><%=  @food.name %></h3>
+<h3>Price: $<%= @food.price%></h3>
+
+<h5>Category: <%= @food.category%></h5>
+<h5>Description: <%= @food.description%></h5>
+
+<div class="rows">
+  <div class="three columns">
+    <%= button_to "EDIT", edit_food_path(@food.id), :method => :get %>
+  </div>
+  <div class="four columns">
+    <%= button_to "DELETE", food_path(@food), :method => :delete %>
+  </div>
+</div>

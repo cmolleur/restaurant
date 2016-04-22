@@ -1,0 +1,32 @@
+<div class="rows">
+  <div class="nine columns">
+    <h1>Menu</h1>
+  </div>
+  <div style="line-height: 5;" class="three columns">
+    <%= button_to "ADD ITEM", new_food_path, :method => :get %>
+  </div>
+</div>
+
+
+<table class="u-full-width">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @foods.each do |food| %>
+      <tr>
+        <td><%=food.name%></td>
+        <td><%=food.category%></td>
+        <td><%=food.description%></td>
+        <td>$ <%=food.price%></td>
+        <td><%= link_to "View", food_path(food.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

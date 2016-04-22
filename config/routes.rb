@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   root 'users#log_in'
 
   resources :users, only: [:new, :create, :destroy]
+  resources :employees
+
   get '/users/log_in' => "users#log_in", as: :log_in
   get '/users/profile' => "users#profile", as: :profile
 

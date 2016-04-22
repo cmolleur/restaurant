@@ -1,11 +1,15 @@
-<h1>Add Party</h1>
-<hr>
-<%= form_for @party do |f| %>
-  <%= f.label "Number of People" %>
-  <%= f.number_field :quantity %>
+<div class="center">
+  <h1>Add Party</h1>
+  <hr>
 
-  <%= f.label :table %>
-  <%= f.number_field :table %></br>
+  <%= form_for @party do |f| %>
+    <%= f.label "Number of People" %>
+    <%= f.number_field :quantity %>
 
-  <%= f.submit %>
-<% end %>
+    <%= f.label :table %>
+    <%= f.number_field :table %></br>
+
+    <%= submit_tag 'DONE' %>
+    <%= submit_tag 'CONTINUE', name: 'create_and_continue' %>
+  <% end %>
+</div>

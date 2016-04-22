@@ -1,0 +1,27 @@
+<div class="rows">
+  <div class="nine columns">
+    <h1>Employees</h1>
+  </div>
+</div>
+
+
+<table class="u-full-width">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%=user.name%></td>
+        <td><%=user.username%></td>
+        <td><%=user.password%></td>
+        <td><%= link_to "View", user_path(user.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

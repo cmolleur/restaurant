@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  def index
+    @users = User.all
+  end
+
   def new
     @user = User.new
     render :layout => 'layout2'
@@ -25,6 +29,16 @@ class UsersController < ApplicationController
     else
       redirect_to log_in_path
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
+  end
+
+
+  def destroy
+    User.destroy(params[:id])
+    redirect_to users_path
   end
 
   private
