@@ -10,12 +10,38 @@
 </div>
 <div class="rows">
   <h5>Food Orders:</h5>
-  <% @party.foods.each do |food| %>
-  <%= food.name %>
-  <%= food.price %>
-  </br>
-  <% end %>
-</div>
-<div class="rows">
-TOTAL: <%= @total %>
-</div>
+
+  <table class="u-full-width">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Completed?</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @party.orders.each do |order| %>
+        <tr>
+          <td><%=order.food.name%></td>
+          <td>$<%=order.food.price%></td>
+          <td><%=order.is_completed%></td>
+          <td>
+            <%= form_tag order_path(order.id), method: "put" do %>
+              <%= hidden_field_tag :party_id, @party.id %>
+              <%= hidden_field_tag :is_completed, true %>
+              <%= submit_tag 'Mark as Complete'%>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="rows bold">
+    <div class="three columns">
+      <h5>Total:</h5>
+    </div>
+    <div class="two columns">
+      <h5>$<%= @total %></h5>
+    </div>
+  </div>

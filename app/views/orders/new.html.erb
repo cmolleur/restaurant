@@ -26,9 +26,9 @@
       <% @appetizers.each do |appetizer| %>
         <div class="menu-item">
           <%= check_box_tag 'appetizer_ids[]', appetizer.id -%>
-          <p class="menu-name"><%= h appetizer.name -%></p>
+          <p class="menu-name"><%= appetizer.name -%></p>
         </br>
-          <%= h appetizer.description -%>
+          <%= appetizer.description -%>
         </div>
       <% end %>
     </div>

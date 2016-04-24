@@ -102,17 +102,22 @@ nav {
   transition: background-color 0.5s ease;
   background: url(order.jpg) no-repeat;
   background-size: cover;
-
 }
-
 .party {
   background: url(party.jpg) no-repeat;
   background-size: cover;
-
+}
+.logout {
+  background: url(logout.jpg) no-repeat;
+  background-size: cover;
 }
 .block {
   display: inline-block;
   margin-right: 15px;
+}
+.menu-button {
+  background: url(menu.jpg) no-repeat;
+  background-size: cover;
 }
 .menu {
   margin-bottom: 25px;
@@ -166,6 +171,7 @@ nav {
 .right {
   text-align: right;
 }
+.bold {font-weight: 700;}
 
 @media (max-width: 799px) {
   .menu-item {

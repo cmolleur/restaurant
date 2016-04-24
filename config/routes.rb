@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   resources :orders
   resources :parties
+  delete '/parties/:id' => "parties#destroy", as: :delete_party
+
   resources :foods
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

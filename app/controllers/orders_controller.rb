@@ -7,13 +7,11 @@ class OrdersController < ApplicationController
 # order_params.merge food_id: params[:appetizer_ids]
 
   def create
-    new_order = Order.create order_params
     if params[:appetizer_ids] then Order.create order_params.merge food_id: params[:appetizer_ids][0] end
     if params[:entree_ids] then Order.create order_params.merge food_id: params[:entree_ids][0] end
     if params[:dessert_ids] then Order.create order_params.merge food_id: params[:dessert_ids][0] end
-    # redirect_to '/'
-    redirect_to order_path order.id
-    # redirect_to party_path(order_params[:party_id])
+
+    redirect_to party_path(order_params[:party_id])
   end
 
   def new
@@ -40,8 +38,11 @@ class OrdersController < ApplicationController
 
   def update
     order = Order.find params[:id]
-    order.update order_params
-    redirect_to order_path order.id
+
+    order.update(is_completed: params[:is_completed])
+    redirect_to party_path params[:party_id]
+
+
   end
 
   def destroy

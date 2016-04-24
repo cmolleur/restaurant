@@ -1,29 +1,18 @@
-<div class="rows">
-  <div class="nine columns">
-    <h1>Parties</h1>
-  </div>
-  <div class="three columns right">
-    <%= button_to "ADD NEW", new_party_path, :method => :get %>
-  </div>
-</div>
+<h1>Parties</h1>
 <hr>
 
-<div class="no-paid">
   <% @parties.each do |party| %>
   <div class="rows">
-    <div class="six columns">
+    <div  style="line-height: 5;" class="six columns">
       <h5>Group #: <%= party.id %></h5>
+      <h6>Table #: <%= party.table %></h6>
     </div>
-    <div class="three columns">
+    <div  style="line-height: 5;" class="three columns">
       <%= button_to "VIEW", party_path(party.id), :class => "button-primary", :method => :get %>
     </div>
-    <div class="three columns">
-      <%= button_to "DELETE", party_path(party), method: :destroy %>
+    <div  style="line-height: 5;" class="three columns">
+      <%= button_to "DELETE", party, :method => :delete %>
     </div>
   </div>
   <hr class="divider">
   <% end %>
-</div>
-<div class="paid">
-
-</div>
