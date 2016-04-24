@@ -1,21 +1,30 @@
-<div class="rows">
-  <div class="nine columns">
+<div class="page-headers">
     <h1>Orders</h1>
-  </div>
-  <div class="three columns">
-    <%= button_to "ADD NEW", new_order_path, :method => :get %>
-  </div>
+    <%= button_to "ADD ORDER", new_order_path, class: "button-primary", :method => :get %>
 </div>
-<hr>
 
-  <% @orders.each do |order| %>
-  <div class="rows">
-    <div class="eight columns">
-      <h3>Order #: <%= order.id %></h3>
+
+<% @orders.each do |order| %>
+
+  <div class="flexbox">
+
+    <div  style="line-height: 5;">
+      <h5>Order #: <%= order.id %></h5>
+      <h6>Item: <%= order.food.name %></h6>
     </div>
-    <div class="three columns">
-      <%= button_to "VIEW RECEIPT", order_path(order.id), :method => :get %>
+
+    <div  style="line-height: 5;">
+      <h6>Complete: <%= order.is_completed %></h6>
     </div>
+
+    <div  style="line-height: 5;">
+
+      <%= form_tag order_path(order.id), method: "put" do %>
+        <%= hidden_field_tag :is_completed, true %>
+        <%= submit_tag 'MARK AS COMPLETE' %>
+      <% end %>
+    </div>
+
   </div>
-
+  <hr class="divider">
   <% end %>

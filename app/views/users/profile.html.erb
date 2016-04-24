@@ -1,29 +1,34 @@
 <% if @user.username == "admin" %>
 
-  <div class="rows">
-    <div class="nine columns">
-      <h3>Welcome Back <%= @user.name %></h3>
-    </div>
+  <div class="flexbox">
+      <div>
+        <h3>Welcome Back <%= @user.name %></h3>
+      </div>
+      <div>
+      <%= button_to "LOGOUT", deletion_station_path, class: "button-primary", :method => :delete %>
+      </div>
   </div>
 
-  <div class="rows center">
+  <div class="center">
 
     <%= link_to foods_path do %>
       <div class="box-selector menu-button">
-        Menu
+        View/Edit Menu
       </div>
     <% end %>
 
     <%= link_to new_party_path do %>
       <div class="box-selector order">
-        Start a New Order
+        Create a New Order
       </div>
     <% end %>
-    <%= link_to deletion_station_path, method: :delete do %>
-      <div class="box-selector logout">
-        Logout
+
+    <%= link_to orders_path do %>
+      <div class="box-selector kitchen">
+        Kitchen Orders
       </div>
     <% end %>
+
     <!-- <div class="box-selector party">
       PARTIES
 
@@ -33,11 +38,14 @@
 
 <% else %>
 
-  <div class="rows">
-    <div class="nine columns">
+<div class="flexbox">
+    <div>
       <h3>Welcome Back <%= @user.name %></h3>
     </div>
-  </div>
+    <div>
+    <%= button_to "LOGOUT", deletion_station_path, class: "button-primary", :method => :delete %>
+    </div>
+</div>
 
   <div class="rows center">
     <%= link_to new_party_path do %>
@@ -45,14 +53,14 @@
         Start a New Order
       </div>
     <% end %>
+    <%= link_to orders_path do %>
+      <div class="box-selector kitchen">
+        Kitchen Orders
+      </div>
+    <% end %>
     <%= link_to parties_path do %>
       <div class="box-selector party">
         View Parties
-      </div>
-    <% end %>
-    <%= link_to deletion_station_path, method: :delete do %>
-      <div class="box-selector logout">
-        Logout
       </div>
     <% end %>
   </div>

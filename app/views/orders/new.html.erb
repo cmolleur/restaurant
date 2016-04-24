@@ -12,12 +12,12 @@
     <%= f.select( :food_id, options_for_select( @foods.map{ |food| [food.name, food.id ]}) ) %> -->
 
     <div class="block">
-      <%= f.label "Server" %>
+      <%= f.label "Server:" %>
       <%= f.select( :user_id, options_for_select(@users.map {|user| [user.name, user.id ]}) ) %>
     </div>
     <div class="block">
-      <%= f.label :party_id %>
-      <%= f.select( :party_id, options_for_select(@parties.map {|party| [party.quantity, party.id ]}) ) %>
+      <%= f.label "Party Number:" %>
+      <%= f.select( :party_id, options_for_select(@parties.map {|party| [party.id, party.id ]}) ) %>
     </div>
     </br>
 
@@ -59,7 +59,8 @@
       <% end %>
     </div>
   <div class="center">
-    <%= f.submit "VIEW" %>
+
+    <%= f.submit "VIEW", class: "button-primary" %>
   </div>
   <% end %>
 

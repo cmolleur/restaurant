@@ -16,8 +16,8 @@
       <tr>
         <th>Item</th>
         <th>Price</th>
-        <th>Completed?</th>
-        <th></th>
+        <th>Order Complete?</th>
+        <!-- <th></th> -->
       </tr>
     </thead>
     <tbody>
@@ -26,22 +26,36 @@
           <td><%=order.food.name%></td>
           <td>$<%=order.food.price%></td>
           <td><%=order.is_completed%></td>
-          <td>
+          <!-- <td>
             <%= form_tag order_path(order.id), method: "put" do %>
               <%= hidden_field_tag :party_id, @party.id %>
               <%= hidden_field_tag :is_completed, true %>
               <%= submit_tag 'Mark as Complete'%>
             <% end %>
-          </td>
+          </td> -->
         </tr>
       <% end %>
+      <tr class="">
+        <td class=""><h5>Tip:</h5></td>
+        <td class="">
+          15%: <span class="tip-one"></span></br>
+          20%: <span class="tip-two"></span></br>
+          25%: <span class="tip-three"></span>
+        </td>
+        <td class=""></td>
+      </tr>
+        <tr class="bold">
+          <td class="last"><h5>Total: </h5></td>
+          <td class="last"><h5>$<%= @total %></h5></td>
+          <td class="last"></td>
+        </tr>
     </tbody>
   </table>
-  <div class="rows bold">
-    <div class="three columns">
-      <h5>Total:</h5>
-    </div>
-    <div class="two columns">
-      <h5>$<%= @total %></h5>
-    </div>
-  </div>
+
+  <script>
+     $(document).ready(function(){
+       $(".tip-one").text((<%= @total %> * .15).toFixed(2));
+       $(".tip-two").text((<%= @total %> * .20).toFixed(2));
+       $(".tip-three").text((<%= @total %> * .25).toFixed(2));
+     });
+  </script>

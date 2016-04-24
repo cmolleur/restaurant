@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
 
   def index
     @orders = Order.where(user_id: current_user.id)
+    @orders = Order.all.sort_by {|m| m.created_at }
   end
 
 # order_params.merge food_id: params[:appetizer_ids]
@@ -38,16 +39,14 @@ class OrdersController < ApplicationController
 
   def update
     order = Order.find params[:id]
-
     order.update(is_completed: params[:is_completed])
-    redirect_to party_path params[:party_id]
-
-
+    redirect_to orders_path
   end
+
 
   def destroy
     Order.destroy(params[:id])
-    redirect_to order_path
+    redirect_to orders_path
   end
 
 

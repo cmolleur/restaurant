@@ -122,6 +122,10 @@ nav {
 .menu {
   margin-bottom: 25px;
 }
+.kitchen {
+  background: url(kitchen-orders.jpg) no-repeat;
+  background-size: cover;
+}
 .menu-item {
   width: 31%;
   display:inline-block;
@@ -172,6 +176,19 @@ nav {
   text-align: right;
 }
 .bold {font-weight: 700;}
+.page-headers {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flexbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.last {
+   border-bottom: 0;
+}
 
 @media (max-width: 799px) {
   .menu-item {
@@ -188,5 +205,17 @@ nav {
   }
   .u-full-width td {
     padding: 2px 0;
+  }
+}
+@media (max-width: 549px) {
+  .flexbox {
+    display: block;
+    text-align: center;
+  }
+  .box-selector {
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    font-size: 18px;
   }
 }

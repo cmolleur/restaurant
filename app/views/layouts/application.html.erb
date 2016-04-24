@@ -12,7 +12,7 @@
 
   <nav>
     <div class="logo">
-      troppo
+        troppo
     </div>
     <div id="myNav" class="overlay">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
@@ -22,10 +22,10 @@
         <ul class="sub-nav">
           <li><%= link_to "Add Party", new_party_path %></li>
         </ul>
-        <%= link_to "CREATE ORDER", new_order_path, :class => "margin-bottom-link" %>
-        <!-- <ul class="sub-nav">
-          <li><%= link_to "Create a new order", new_order_path %></li>
-        </ul> -->
+        <%= link_to "ORDERS", orders_path %>
+        <ul class="sub-nav">
+          <li><%= link_to "Add New Order", new_order_path %></li>
+        </ul>
 
         <%= link_to "LOGOUT", deletion_station_path, method: :delete %>
 
@@ -35,8 +35,9 @@
     <div class="nav-x" onclick="openNav()">
       <span style="font-size:30px;cursor:pointer">☰</span>
     </div>
-
   </nav>
+
+
 
   <div class="container">
     <%= yield %>
