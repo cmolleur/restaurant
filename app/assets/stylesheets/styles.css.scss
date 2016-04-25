@@ -220,7 +220,7 @@ nav {
 }
 @media print {
   body * {
-    visibility: hidden;
+    font-size: 10px;
   }
   #section-to-print, #section-to-print * {
     visibility: visible;
