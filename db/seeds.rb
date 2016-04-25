@@ -19,3 +19,7 @@ foods = Food.create([
   {name: "Tiramisu", description: "Lady’s fingers dipped in coffee and layered with mascarpone cheese", price: 8, category: 'dessert'},
   {name: "Gelato", description: "Choose from the freshly made flavors of the day", price: 6, category: 'dessert'}
 ])
+users = User.create([
+  {name: "Colette", username: "cmolleur", password_digest: "kokobunny"}
+  {name: "Administrator", username: "admin", password_digest: "youshallnotpass"}
+])
