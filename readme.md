@@ -1,6 +1,6 @@
 
 HEROKU APPLICATION:
-https://desolate-castle-15618.herokuapp.com
+https://arcane-oasis-34382.herokuapp.com
 
 USER STORIES:
 A restaurant would use this app to give to their servers. A server would create an account to start. They then have the ability to add parties and add orders to those particular parties. A server can keep track of what orders have been completed by the kitchen. I have a separate login for admin which only has the ability edit the menu. At the end of the order, the server can print the final receipt with tip recommendations.
