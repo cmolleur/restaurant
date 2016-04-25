@@ -218,9 +218,6 @@ nav {
     font-size: 18px;
   }
 }
-@print {
-  font-size: 10px;
-}
 @media print {
   body * {
     visibility: hidden;
