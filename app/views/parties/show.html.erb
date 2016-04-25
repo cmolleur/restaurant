@@ -1,9 +1,9 @@
 <div class="page-headers">
-    <h1>Party #: <%= @party.id %></h1>
+    <h1  id="section-to-print" >Party #: <%= @party.id %></h1>
     <%= button_to "ADD ORDER", new_order_path, class: "button-primary", :method => :get %>
 </div>
 
-<div class="rows">
+<div class="rows"  id="section-to-print">
   <div class="seven columns">
     <h5>Number of People: <%= @party.quantity %></h5>
   </div>
