@@ -14,7 +14,13 @@
     </div>
 
     <div  style="line-height: 5;">
-      <h6>Complete: <%= order.is_completed %></h6>
+      <h6>Complete:
+        <% if order.is_completed == true %>
+          <%= "Yes" %>
+        <% else %>
+          <%= "No" %>
+        <% end %>
+      </h6>
     </div>
 
     <div  style="line-height: 5;">

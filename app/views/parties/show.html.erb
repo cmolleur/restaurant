@@ -1,4 +1,4 @@
-<h1>Party #: <%= @party.id %></h1>
+<h1 id="section-to-print">Party #: <%= @party.id %></h1>
 <hr>
 <div class="rows">
   <div class="seven columns">
@@ -11,12 +11,12 @@
 <div class="rows">
   <h5>Food Orders:</h5>
 
-  <table class="u-full-width">
+  <table class="u-full-width" id="section-to-print">
     <thead>
       <tr>
         <th>Item</th>
         <th>Price</th>
-        <th>Order Complete?</th>
+        <th id="section-not-to-print">Order Complete?</th>
         <!-- <th></th> -->
       </tr>
     </thead>
@@ -25,7 +25,13 @@
         <tr>
           <td><%=order.food.name%></td>
           <td>$<%=order.food.price%></td>
-          <td><%=order.is_completed%></td>
+          <td>
+            <% if order.is_completed == true %>
+              <%= "Yes" %>
+            <% else %>
+              <%= "No" %>
+            <% end %>
+          </td>
           <!-- <td>
             <%= form_tag order_path(order.id), method: "put" do %>
               <%= hidden_field_tag :party_id, @party.id %>
@@ -42,15 +48,19 @@
           20%: <span class="tip-two"></span></br>
           25%: <span class="tip-three"></span>
         </td>
-        <td class=""></td>
+        <td id="section-not-to-print" class=""></td>
       </tr>
         <tr class="bold">
           <td class="last"><h5>Total: </h5></td>
           <td class="last"><h5>$<%= @total %></h5></td>
-          <td class="last"></td>
+          <td id="section-not-to-print" class="last"></td>
         </tr>
     </tbody>
   </table>
+
+  <div class="rows center">
+      <button class="button-primary" type="button" onclick="window.print();return false;" name="button">Print Receipt</button>
+  </div>
 
   <script>
      $(document).ready(function(){
