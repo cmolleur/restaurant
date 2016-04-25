@@ -220,17 +220,17 @@ nav {
 }
 @media print {
   body * {
-    font-size: 10px;
+    visibility: hidden;
   }
   #section-to-print, #section-to-print * {
     visibility: visible;
-    font-size: 10px;
+    font-size: 6px;
   }
 
   #section-to-print {
     position: absolute;
     left: 0;
     top: 0;
-    font-size: 10px;
+    font-size: 6px;
   }
 }
